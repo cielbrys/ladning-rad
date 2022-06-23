@@ -46,14 +46,6 @@ const Form = () => {
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [isFilledIn, setIsFilledIn] = useState(false);
 
-  const submitUser = async () => {
-    window.location.replace(
-      `${
-        import.meta.env.VITE_MAIL_API_URL
-      }/?name=${name}&firstName=${firstName}&email=${email}&age=${age}&krasenwin=flase`
-    );
-  };
-
   useEffect(() => {
     if (
       name !== '' &&
@@ -71,7 +63,10 @@ const Form = () => {
   return (
     <FormWrapper>
       <Title>Wie is deze winnaar?</Title>
-      <FormStyling onSubmit={submitUser} action='https://academicshop.eu/'>
+      <FormStyling
+        action={`${
+          import.meta.env.VITE_MAIL_API_URL
+        }/?name=${name}&firstName=${firstName}&email=${email}&age=${age}&krasenwin=false`}>
         <AllInputWrapper>
           <InputsWrapper>
             <FormInput
