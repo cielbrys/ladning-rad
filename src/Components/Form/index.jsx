@@ -1,4 +1,3 @@
-import e from 'express';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ButtonUrl from '../ButtonUrl';
@@ -49,7 +48,7 @@ const Form = () => {
 
   const submitUser = (e) => {
     e.preventDefault();
-    
+
     window.location.replace(
       `${
         import.meta.env.VITE_MAIL_API_URL
