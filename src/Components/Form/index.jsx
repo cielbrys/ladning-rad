@@ -49,6 +49,7 @@ const Form = () => {
 
   const submitUser = (e) => {
     e.preventDefault();
+    
     window.location.replace(
       `${
         import.meta.env.VITE_MAIL_API_URL
