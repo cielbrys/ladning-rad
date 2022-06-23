@@ -43,10 +43,10 @@ const Form = () => {
   const [firstName, setFirstName] = useState('');
   const [email, setEmail] = useState('');
   const [age, setAge] = useState('');
+  const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [isFilledIn, setIsFilledIn] = useState(false);
 
   const submitUser = async () => {
-    setSubmitting(true);
     window.location.replace(
       `${
         import.meta.env.VITE_MAIL_API_URL
