@@ -50,19 +50,23 @@ const Form = () => {
     window.location.replace(
       `${
         import.meta.env.VITE_MAIL_API_URL
-      }/?name=${name}&firstName=${firstName}&email=${email}&age=${age}&code=${
-        code.code
-      }&krasenwin=true`
+      }/?name=${name}&firstName=${firstName}&email=${email}&age=${age}&krasenwin=flase`
     );
   };
 
   useEffect(() => {
-    if (name !== '' && firstName !== '' && email !== '' && age !== '') {
+    if (
+      name !== '' &&
+      firstName !== '' &&
+      email !== '' &&
+      age !== '' &&
+      acceptedTerms
+    ) {
       setIsFilledIn(true);
     } else {
       setIsFilledIn(false);
     }
-  }, [name, firstName, email, age]);
+  }, [name, firstName, email, age, acceptedTerms]);
 
   return (
     <FormWrapper>
