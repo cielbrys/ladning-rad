@@ -1,3 +1,4 @@
+import e from 'express';
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import ButtonUrl from '../ButtonUrl';
@@ -46,7 +47,8 @@ const Form = () => {
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [isFilledIn, setIsFilledIn] = useState(false);
 
-  const submitUser = () => {
+  const submitUser = (e) => {
+    e.preventDefault();
     window.location.replace(
       `${
         import.meta.env.VITE_MAIL_API_URL
@@ -71,7 +73,7 @@ const Form = () => {
   return (
     <FormWrapper>
       <Title>Wie is deze winnaar?</Title>
-      <FormStyling onSubmit={() => submitUser()}>
+      <FormStyling onSubmit={(e) => submitUser(e)}>
         <AllInputWrapper>
           <InputsWrapper>
             <FormInput
