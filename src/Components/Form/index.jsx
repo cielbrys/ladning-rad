@@ -71,7 +71,7 @@ const Form = () => {
   return (
     <FormWrapper>
       <Title>Wie is deze winnaar?</Title>
-      <FormStyling onSubmit={() => submitUser}>
+      <FormStyling onSubmit={() => submitUser()}>
         <AllInputWrapper>
           <InputsWrapper>
             <FormInput
