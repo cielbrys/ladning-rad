@@ -46,6 +46,14 @@ const Form = () => {
   const [acceptedTerms, setAcceptedTerms] = useState(false);
   const [isFilledIn, setIsFilledIn] = useState(false);
 
+  const submitUser = () => {
+    window.location.replace(
+      `${
+        import.meta.env.VITE_MAIL_API_URL
+      }/?name=${name}&firstName=${firstName}&email=${email}&age=${age}&krasenwin=false`
+    );
+  };
+
   useEffect(() => {
     if (
       name !== '' &&
@@ -63,10 +71,7 @@ const Form = () => {
   return (
     <FormWrapper>
       <Title>Wie is deze winnaar?</Title>
-      <FormStyling
-        action={`${
-          import.meta.env.VITE_MAIL_API_URL
-        }/?name=${name}&firstName=${firstName}&email=${email}&age=${age}&krasenwin=false`}>
+      <FormStyling onSubmit={() => submitUser}>
         <AllInputWrapper>
           <InputsWrapper>
             <FormInput
